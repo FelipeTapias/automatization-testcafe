@@ -1,4 +1,5 @@
 import { Selector } from "testcafe";
+require('dotenv').config();
 
 export default class refillForm {
 
@@ -16,11 +17,12 @@ export default class refillForm {
             .typeText(this.inputCity, city)
             .typeText(this.inputprofession, profession)
             .typeText(this.inputStudy, study)
+            .wait(2000)
             .click(this.buttonSend)
-            .wait(10000)
-            .expect(this.responseSended.innerText).eql('Se ha registrado tu respuesta.')
+            .wait(2000)
+            .expect(this.responseSended.innerText).eql(process.env.RESPONSE_SENDED)
             .click(this.anotherResponse)
-            .wait(10000);
+            .wait(3000);
     }
 
 }

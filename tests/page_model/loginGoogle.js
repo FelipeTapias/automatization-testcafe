@@ -1,4 +1,5 @@
 import { Selector } from "testcafe";
+require('dotenv').config();
 
 export default class login {
 
@@ -13,12 +14,12 @@ export default class login {
             .typeText(this.fieldEmail, emailUser)
             .wait(10)
             .click(this.buttonNext)
-            .wait(3000)
+            .wait(2000)
             .typeText(this.fieldPassword, passwordUser)
             .wait(1000)
             .pressKey('enter')
-            .wait(10000)
-            .expect(this.myEmailUser.innerText).eql('xxxx')
+            .wait(2000)
+            .expect(this.myEmailUser.innerText).eql(process.env.EMAIL_USER)
             .wait(2000);
     }
 
