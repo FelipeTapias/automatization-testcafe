@@ -1,14 +1,18 @@
-import login from "../page_model/loginGoogle";
-import refillForm from "../page_model/refillForm";
+import RegisterUser from "../page_model/registerUser";
+import LoginUser from "../page_model/loginUser";
 require('dotenv').config();
 
-const pageLogin = new login();
-const pageForm = new refillForm();
+const registerUser = new RegisterUser();
+const loginUser = new LoginUser();
 
-fixture`Ejemplo test Fixture`.page`https://docs.google.com/forms/d/e/1FAIpQLSe7SJKEb3i6S1V7BGwXYh16WwQbjJRkMivOfHFUkw6-Cg1sdA/viewform`;
+fixture`Ejemplo test Fixture`.page`http://localhost:3000`;
 
-test('Ejemplo search', async (t) => {
-    await pageLogin.formLogin(t, process.env.Email_USER, process.env.PASSWORD_USER);
-    await pageForm.refillFormPoli(t, process.env.NAME_USER, process.env.CITY_USER, process.env.PROFESSION_USER, process.env.STUDY_USER);
+
+test('User login', async (t) => {
+    await loginUser.actionLogin(t, process.env.EMAIL_USER, process.env.PASSWORD_USER);
+});
+
+test('User register', async (t) => {
+    await registerUser.actionRegisterUser(t, process.env.NAME_USER, process.env.EMAIL_USER_REG, process.env.PASSWORD_USER_REG, process.env.BIRTH_USER);
 });
 
