@@ -10,7 +10,7 @@ export default class RegisterUser {
     fieldBirth = Selector('#root > div.container.mt-5.w-50 > form > div > div.w-50.m-auto.mb-5 > div > div > input');
     buttonCreate = Selector('#root > div.container.mt-5.w-50 > form > div > button');
     birthSelected = Selector('#body > div:nth-child(7) > div > div > div > div > div > div.ant-picker-body > table > tbody > tr:nth-child(3) > td.ant-picker-cell.ant-picker-cell-in-view.ant-picker-cell-selected > div');
-    titlePlace = Selector('#root > div > div.Home > div:nth-child(3) > div:nth-child(1) > h2')
+    titlePlace = Selector('#root > div > div.Home > div:nth-child(3) > div:nth-child(1) > h2');
 
     actionRegisterUser = async(t, name, email, password, birth) => {
         await t

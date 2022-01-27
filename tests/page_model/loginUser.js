@@ -15,6 +15,7 @@ export default class LoginUser {
             .click(this.iconUser)
             .wait(100)
             .typeText(this.fieldEmail, emailUser)
+            .wait(1000)
             .typeText(this.fieldPassword, passwordUser)
             .click(this.buttonLogin)
             .wait(2000)
@@ -23,6 +24,6 @@ export default class LoginUser {
             .expect(this.buttonLogout.innerText).eql('Cerrar sesión')
             .wait(1000)
             .click(this.buttonLogout)
-            .wait(2000)
+            .wait(2000);
     }
 }
