@@ -10,7 +10,7 @@ export default class SearchPlace {
             .maximizeWindow()
             .typeText(this.inputField, textSearch)
             .wait(2000)
-            .expect(this.placeName.innerText).eql('Reserva natural Alto de San Miguel')
+            .expect(this.placeName.innerText).eql('Cerro Pan de Azúcar')
             .wait(2000)
     }
     

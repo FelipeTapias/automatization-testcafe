@@ -4,7 +4,7 @@
   "description": "Proyecto para practicar la herramienta de automatización testCafe",
   "main": "main.js",
   "scripts": {
-    "test": "testcafe chrome tests/suites/"
+    "test": "testcafe edge tests/suites/"
   },
   "author": "Anfeta",
   "license": "ISC",
