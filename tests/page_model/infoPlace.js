@@ -19,6 +19,8 @@ export default class InfoPlace {
     buttonInfo = Selector('#root > div > div.Home > div:nth-child(3) > div:nth-child(1) > button');
     arrowRight = Selector('#carouselExampleControls > button.carousel-control-next > span.carousel-control-next-icon');
     closeModal = Selector('#body > div:nth-child(6) > div > div.ant-modal-wrap > div > div.ant-modal-content > button > span');
+    placeName = Selector('#root > div > div.Home > div:nth-child(3) > div > h2');
+    
 
     
 
@@ -33,8 +35,9 @@ export default class InfoPlace {
             .click(this.arrowRight)
             .wait(1000)
             .click(this.closeModal)
-            .wait(2000);
-
+            .wait(2000)
+            .expect(this.placeName.innerText).eql('Cerro Pan de Azúcar')
+            .wait(2000)
     }
 
 }
